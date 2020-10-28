@@ -30,19 +30,24 @@ const Restlist = (props) => {
   return <section>
     <h1>Hello List</h1>
     {restList.Restaurants.map((rest, i) => {
-      
+
       return <Link key={i} to={`./rest/${rest.Id}`}>
-        <h1>{rest.Name}</h1>
-        <ul>
-          {console.log(rest.Cuisines)}
-          {rest.Cuisines.map((cuisine, i) => {
-            return <li key={i}>
-              {cuisine.Name}
-            </li>
-          })}
-        </ul>
-        
+        <div className="card">
+          <h1>{rest.Name}</h1>
+          <h2>RANDOM IMAGE</h2>
+          <div className="container">
+            <ul>
+              {console.log(rest.Cuisines)}
+              {rest.Cuisines.map((cuisine, i) => {
+                return <li key={i}>
+                  {cuisine.Name}
+                </li>
+              })}
+            </ul>
+          </div>
+        </div>
       </Link>
+
     })}
   </section>
 
