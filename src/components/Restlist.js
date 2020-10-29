@@ -18,7 +18,10 @@ const Restlist = (props) => {
   }, [])
 
   if (!restList.Restaurants) {
-    return <h1>Loading...</h1>
+    return <div className="loaderContainer">
+      <h1 className="loader"></h1>
+      <h3>loading!</h3>
+    </div>
   }
 
 
@@ -31,10 +34,11 @@ const Restlist = (props) => {
         <Link to={'./components/main'} style={{ textDecoration: 'none', color: "#D9B08C" }}>Home</Link>
       </div>
     </nav>
-    
+    <section className="desktopView"></section>
+    <section className="desktopView"></section>
     <h1 className="pageTitle">Restaurants in {restList.Area}</h1>
     {restList.Restaurants.map((rest, i) => {
-      return <Link style={{ color: '#2C3531', textDecoration: 'none' }} key={i} to={`./rest/${rest.Id}`}>
+      return <Link style={{ color: '#2C3531', textDecoration: 'none' }}
         key={i}
         to={{
           pathname: `/project-2/restlist/rest/${rest.Id}`,
@@ -42,11 +46,9 @@ const Restlist = (props) => {
         }}
       >
         <div className="card">
-          <h2>RANDOM IMAGE</h2>
-          <img src={rest.LogoUrl} alt="logo"/>
+          <h1 className="cardTitle">{rest.Name}</h1>
           <div className="container">
-
-            <h1 className="cardTitle">{rest.Name}</h1>
+            <img className="logo" src={rest.LogoUrl} alt="logo" />
             <ul>
               {rest.Cuisines.map((cuisine, i) => {
                 return <li key={i}>
@@ -55,14 +57,6 @@ const Restlist = (props) => {
               })}
             </ul>
           </div>
-          <ul>
-            {console.log(rest.Cuisines)}
-            {rest.Cuisines.map((cuisine, i) => {
-              return <li key={i}>
-                {cuisine.Name}
-              </li>
-            })}
-          </ul>
         </div>
 
       </Link>
