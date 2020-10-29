@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import RestDetails from './RestDetails'
+import RestOrders from './RestOrders'
 
 const Rest = (props) => {
+  const [rest, updateRest] = useState({})
+  const [isOpen, updateIsOpen] = useState(null)
 
-  // const restId = props.match.params.restId
-  // const [restList, updateRestList] = useState({})
-  // const [restaurant, updateRestaurant] = useState({})
+  if (!rest.Id) {
+    updateRest(props.location.state.rest)
+    return <h3>Loading...</h3>
+  }
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const { data } = await axios.get(`https://cors-anywhere.herokuapp.com/https://uk.api.just-eat.io/restaurants/bypostcode/${postcode}`)
-  //     updateRestList(data)
-  //   }
-  //   fetchData()
-  // }, [])
 
-  console.log(props)
-  // console.log(restId)
-  
-  return <h1>Hello Rest</h1>
+  if (isOpen === null) {
+    updateIsOpen
+  }
+
+
+  return <section>
+    <RestDetails rest={rest} />
+    <RestOrders rest={rest} />
+  </section>
 }
+
 
 
 export default Rest

@@ -8,7 +8,6 @@ import Main from './components/Main'
 import Restlist from './components/Restlist'
 import Rest from './components/Rest'
 
-
 const App = () => (
   <BrowserRouter>
     {/* <Header /> */}
