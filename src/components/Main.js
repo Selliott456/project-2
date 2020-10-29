@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const Main = () => {
-  // const [restaurant, udateRestaurant] = useState({})
+  // const [restaurant, updateRestaurant] = useState({})
   const [userInput, updateUserInput] = useState('')
 
   return <section>

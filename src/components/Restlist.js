@@ -34,6 +34,7 @@ const Restlist = (props) => {
         <Link to={'./components/main'} style={{ textDecoration: 'none', color: "#D9B08C" }}>Home</Link>
       </div>
     </nav>
+
     <section className="desktopView"></section>
     <section className="desktopView"></section>
     <h1 className="pageTitle">Restaurants in {restList.Area}</h1>
@@ -47,6 +48,7 @@ const Restlist = (props) => {
       >
         <div className="card">
           <h1 className="cardTitle">{rest.Name}</h1>
+          <img src={rest.LogoUrl} alt="logo" />
           <div className="container">
             <img className="logo" src={rest.LogoUrl} alt="logo" />
             <ul>

@@ -8,7 +8,6 @@ const RestDetails = ({ rest }) => {
     updateStarRating(rest.RatingStars)
   }
 
-  console.log(rest)
   return <section >
     <h1 className="cardTitle">{rest.Name}</h1>
     <img src={rest.LogoUrl} alt="logo" />
@@ -33,8 +32,9 @@ const RestDetails = ({ rest }) => {
           editing={false}
           starCount={6}
           value={starRating}
-        />
+        /> <br /><small>From {rest.NumberOfRatings} reviews.</small>
       </div>
+
     </div>
   </section>
 }
