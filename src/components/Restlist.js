@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 // import Main from "./Main"
 
 const Restlist = (props) => {
-  // const test = props.match.params.
-  // console.log(props.match.params.postcode)
+
   const postcode = props.match.params.postcode
   const [restList, updateRestList] = useState({})
 
@@ -19,22 +18,16 @@ const Restlist = (props) => {
   }, [])
 
   if (!restList.Restaurants) {
-
     return <h1>Loading...</h1>
-
-
   }
 
 
-  console.log(restList.Restaurants)
   return <section>
-    <h1>Hello List</h1>
+    <h1>Restaurants in {restList.Area}</h1>
     {restList.Restaurants.map((rest, i) => {
-      
       return <Link key={i} to={`./rest/${rest.Id}`}>
-        <h1>{rest.Name}</h1>
+        <h2>{rest.Name}</h2>
         <ul>
-          {console.log(rest.Cuisines)}
           {rest.Cuisines.map((cuisine, i) => {
             return <li key={i}>
               {cuisine.Name}

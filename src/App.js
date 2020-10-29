@@ -14,8 +14,8 @@ const App = () => (
   <BrowserRouter>
     {/* <Header /> */}
     <Switch>
-      <Route exact path="/project-2/restlist/:postcode" component={Restlist}/>
       <Route exact path="/project-2/restlist/rest/:restId" component={Rest}/>
+      <Route exact path="/project-2/restlist/:postcode" component={Restlist}/>
       <Route exact path="/project-2" component={Main}/>
     </Switch>
     {/* <Footer /> */}
