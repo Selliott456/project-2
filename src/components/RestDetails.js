@@ -11,9 +11,9 @@ const RestDetails = ({ rest }) => {
   return <section >
     <h1 className="cardTitle">{rest.Name}</h1>
     <img src={rest.LogoUrl} alt="logo" />
-      <div id="restDetails">
-        <h3>Address</h3>
-        <h4>{rest.Address.FirstLine}, {rest.Address.City}, {rest.Address.Postcode}</h4>
+    <div id="restDetails">
+      <h3>Address</h3>
+      <h4>{rest.Address.FirstLine}, {rest.Address.City}, {rest.Address.Postcode}</h4>
       <div>
         <h3>Cuisines</h3>
         <p>
@@ -28,7 +28,7 @@ const RestDetails = ({ rest }) => {
       <div id="fryRating">
         <h3>Fry Rating:</h3>
         <StarRatingComponent
-          name={rest.RatingStars}
+          name={rest.Name}
           editing={false}
           starCount={6}
           value={starRating}

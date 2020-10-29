@@ -48,7 +48,6 @@ const Restlist = (props) => {
       >
         <div className="card">
           <h1 className="cardTitle">{rest.Name}</h1>
-          <img src={rest.LogoUrl} alt="logo" />
           <div className="container">
             <img className="logo" src={rest.LogoUrl} alt="logo" />
             <ul>
