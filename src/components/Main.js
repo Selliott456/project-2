@@ -1,27 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 const Main = () => {
-  // const [restaurant, updateRestaurant] = useState({})
   const [userInput, updateUserInput] = useState('')
+  const [validPostcode, updateValidPostcode] = useState({})
+  const [link, updateLink] = useState('')
+  const [invalidPostcode, updateInvalidPostcode] = useState('')
+
+  useEffect(() => {
+
+    async function fetchData() {
+      const { data } = await axios.get(`https://cors-anywhere.herokuapp.com/api.postcodes.io/postcodes/${userInput}`)
+      updateValidPostcode(data)
+    }
+    fetchData()
+  }, [userInput])
+
+
+  if (validPostcode.status === 200 && link !== `project-2/restlist/${userInput}`) {
+    updateInvalidPostcode('')
+    updateLink(`project-2/restlist/${userInput}`)
+  } else if (userInput.length > 6 && validPostcode.status !== 200 && updateInvalidPostcode === '') {
+    updateInvalidPostcode('Please Enter A Valid Postcode.')
+    updateLink('')
+  }
+
+  console.log(validPostcode)
 
   return <section>
-    <nav>
-      <div className="navLink">
-        < Link to={'/project-2/restlist'} style={{ textDecoration: 'none', color: '#D9B08C' }}> All Restaurants </Link >
-      </div>
-      <div className="navLink">
-        <Link to={'/project-2/main'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Home</Link>
-      </div>
-    </nav>
     <div className="top-section">
       <div className="hero-text">
         <h1 className="mainHeadline"> You want a pizza me?</h1>
       </div>
       <div className="hero-input">
+        <small>{invalidPostcode}</small>
         <input className="mainInput" placeholder="Enter postcode" onChange={(event) => updateUserInput(event.target.value)} />
-        <button id="homeSearch">< Link to={`/project-2/restlist/${userInput}`} value={userInput} style={{ textDecoration: 'none', color: '#D1E8E2' }}> Search By Postcode </Link ></button>
+        <button id="homeSearch" >
+          < Link style={{ textDecoration: 'none', color: '#D1E8E2' }} to={link} value={userInput} >
+            Search By Postcode
+          </Link >
+        </button>
       </div>
     </div>
 

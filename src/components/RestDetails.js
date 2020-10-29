@@ -1,20 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import StarRatingComponent from 'react-star-rating-component'
 
 const RestDetails = ({ rest }) => {
   const [starRating, updateStarRating] = useState(0)
+  const [mapLocation, updateMapLocation] = useState('')
+  const restAddress = [rest.Address.FirstLine, rest.Address.City, rest.Address.Postcode]
+  const mapString = restAddress.join(', ')
+  const regex = / /gi
+  const mapSrc = `https://maps.googleapis.com/maps/api/staticmap?center=${mapLocation}&zoom=17&scale=1&size=400x400&maptype=roadmap&key=AIzaSyCu3ccf909RNQoQjHa3DUYSkIxbIsM5Hus&format=png&visual_refresh=true`
+  const mapAlt = `Google Map of ${mapString}`
+  const mapHref = `https://www.google.com/maps/place/${mapLocation}`
+
 
   if (starRating === 0) {
+    updateMapLocation(restAddress.join('+').replace(regex, '+'))
     updateStarRating(rest.RatingStars)
   }
 
-  return <section >
+  console.log(mapLocation)
+
+  return <section className="restInfo">
     <h1 className="cardTitle">{rest.Name}</h1>
-    <img src={rest.LogoUrl} alt="logo" />
-    <div id="restDetails">
-      <h3>Address</h3>
-      <h4>{rest.Address.FirstLine}, {rest.Address.City}, {rest.Address.Postcode}</h4>
-      <div>
+    <div id="logo-rating">
+      <img src={rest.LogoUrl} alt="logo"/>
+      <div id="fry-rating">
+        <h3>Fry Rating:</h3>
+        <StarRatingComponent
+          name={rest.Name}
+          editing={false}
+          starCount={6}
+          value={starRating}
+        /> <br /><small>From {rest.NumberOfRatings} reviews.</small>
+      </div>
+    </div>
+
+    <div id="cuisine-address">
+      <div id="address"> 
+        <h3>Address</h3>
+        <h4>{mapString}</h4>
+      </div>
+      <div id="cuisine">
         <h3>Cuisines</h3>
         <p>
           {rest.Cuisines.map((cuisine, i) => {
@@ -25,17 +50,13 @@ const RestDetails = ({ rest }) => {
           })}
         </p>
       </div>
-      <div id="fryRating">
-        <h3>Fry Rating:</h3>
-        <StarRatingComponent
-          name={rest.Name}
-          editing={false}
-          starCount={6}
-          value={starRating}
-        /> <br /><small>From {rest.NumberOfRatings} reviews.</small>
-      </div>
-
     </div>
+    
+    <a href={mapHref} target="_blank" rel="noreferrer" alt={mapAlt}>
+      <div height="400px" width="400px" style={{ backgroundImage: 'url(' + mapSrc + ')' }}>
+        <p>🍔</p>
+      </div>
+    </a>
   </section>
 }
 

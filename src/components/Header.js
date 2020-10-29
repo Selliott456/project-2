@@ -1,14 +1,14 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
 
   return <nav>
-    < Link to={'./components/restlist'}> List All Restaurants </Link >
-    <Link to={'./components/main'}>Home</Link>
+    <div className="navLink">
+      <Link to={'/project-2/main'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Home</Link>
+    </div>
   </nav>
-  
+
 }
 
 

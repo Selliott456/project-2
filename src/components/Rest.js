@@ -12,17 +12,11 @@ const Rest = (props) => {
   }
 
   return <section>
-    <nav>
-      <div className="navLink">
-        < Link to={'/project-2/restlist'} style={{ textDecoration: 'none', color: '#D9B08C' }}> All Restaurants </Link >
-      </div>
-      <div className="navLink">
-        <Link to={'/project-2/main'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Home</Link>
-      </div>
-    </nav>
-    <div className="card">
-      <div className="detailsOrders">
+    <div className="restCard">
+      <div className="detailsOrders" >
         <RestDetails rest={rest} />
+      </div>
+      <div id="orderDetails" className="restCard" >
         <RestOrders rest={rest} />
       </div>
     </div>

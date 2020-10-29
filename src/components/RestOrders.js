@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 
 const RestOrders = ({ rest }) => {
@@ -29,24 +29,26 @@ const RestOrders = ({ rest }) => {
   }
 
   if (offers === '') {
-    if (rest.Offers === []) {
-      updateOffers('None')
+    if (rest.Offers[0] === undefined) {
+      updateOffers(' N/A')
     } else {
       updateOffers(rest.Offers[0].Description)
     }
   }
 
   return <section className="restDetails">
-    <h3>Order Details:</h3>
-    <div>
+    <h3 id="orderTitle">Order Details:</h3>
+    <div id="details">
       <ul>
         <li>Open: {isOpen}</li>
         <li>Collection: {collection}</li>
         <li>Delivery: {delivery}</li>
-        <DeliveryReadout rest={rest} />
         <li>Offers: 💳 {offers}</li>
         <li>Distance: 📍 {rest.DriveDistance} Miles</li>
       </ul>
+    </div>
+    <div className="deliver-time">
+      <DeliveryReadout rest={rest} />
     </div>
   </section>
 }
