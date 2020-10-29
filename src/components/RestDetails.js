@@ -7,8 +7,7 @@ const RestDetails = ({ rest }) => {
   if (starRating === 0) {
     updateStarRating(rest.RatingStars)
   }
-  
-  console.log(rest)
+
   return <section>
     <h1>{rest.Name}</h1>
     <img src={rest.LogoUrl} alt="logo" />
@@ -31,11 +30,12 @@ const RestDetails = ({ rest }) => {
     <div>
       <h3>Fry Rating:</h3>
       <StarRatingComponent
-        name={rest.RatingStars}
+        name={rest.Name}
         editing={false}
         starCount={6}
         value={starRating}
-      />
+      /> <br />
+      <small>From {rest.NumberOfRatings} reviews.</small>
     </div>
   </section>
 }
