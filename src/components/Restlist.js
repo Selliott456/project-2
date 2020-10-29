@@ -31,10 +31,10 @@ const Restlist = (props) => {
         <Link to={'./components/main'} style={{ textDecoration: 'none', color: "#D9B08C" }}>Home</Link>
       </div>
     </nav>
-    
+
     <h1 className="pageTitle">Restaurants in {restList.Area}</h1>
     {restList.Restaurants.map((rest, i) => {
-      return <Link style={{ color: '#2C3531', textDecoration: 'none' }} key={i} to={`./rest/${rest.Id}`}>
+      return <Link style={{ color: '#2C3531', textDecoration: 'none' }}
         key={i}
         to={{
           pathname: `/project-2/restlist/rest/${rest.Id}`,
@@ -42,8 +42,7 @@ const Restlist = (props) => {
         }}
       >
         <div className="card">
-          <h2>RANDOM IMAGE</h2>
-          <img src={rest.LogoUrl} alt="logo"/>
+          <img src={rest.LogoUrl} alt="logo" />
           <div className="container">
 
             <h1 className="cardTitle">{rest.Name}</h1>
@@ -55,14 +54,6 @@ const Restlist = (props) => {
               })}
             </ul>
           </div>
-          <ul>
-            {console.log(rest.Cuisines)}
-            {rest.Cuisines.map((cuisine, i) => {
-              return <li key={i}>
-                {cuisine.Name}
-              </li>
-            })}
-          </ul>
         </div>
 
       </Link>
