@@ -23,23 +23,30 @@ const Restlist = (props) => {
 
 
   return <section>
-    <h1>Restaurants in {restList.Area}</h1>
+    <nav>
+      <div className="navLink">
+        < Link to={'./components/restlist'} style={{ textDecoration: 'none', color: "#D9B08C" }}> All Restaurants </Link >
+      </div>
+      <div className="navLink">
+        <Link to={'./components/main'} style={{ textDecoration: 'none', color: "#D9B08C" }}>Home</Link>
+      </div>
+    </nav>
+    
+    <h1 className="pageTitle">Restaurants in {restList.Area}</h1>
     {restList.Restaurants.map((rest, i) => {
-
-
-      return <Link
+      return <Link style={{ color: '#2C3531', textDecoration: 'none' }} key={i} to={`./rest/${rest.Id}`}>
         key={i}
         to={{
           pathname: `/project-2/restlist/rest/${rest.Id}`,
           state: { rest }
         }}
       >
-        
         <div className="card">
-          <h1>{rest.Name}</h1>
           <h2>RANDOM IMAGE</h2>
           <img src={rest.LogoUrl} alt="logo"/>
           <div className="container">
+
+            <h1 className="cardTitle">{rest.Name}</h1>
             <ul>
               {rest.Cuisines.map((cuisine, i) => {
                 return <li key={i}>
@@ -48,6 +55,14 @@ const Restlist = (props) => {
               })}
             </ul>
           </div>
+          <ul>
+            {console.log(rest.Cuisines)}
+            {rest.Cuisines.map((cuisine, i) => {
+              return <li key={i}>
+                {cuisine.Name}
+              </li>
+            })}
+          </ul>
         </div>
 
       </Link>
