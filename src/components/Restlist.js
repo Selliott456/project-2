@@ -18,7 +18,10 @@ const Restlist = (props) => {
   }, [])
 
   if (!restList.Restaurants) {
-    return <h1>Loading...</h1>
+    return <div className="loaderContainer">
+      <h1 className="loader"></h1>
+      <h3>loading!</h3>
+    </div>
   }
 
 
@@ -32,6 +35,8 @@ const Restlist = (props) => {
       </div>
     </nav>
 
+    <section className="desktopView"></section>
+    <section className="desktopView"></section>
     <h1 className="pageTitle">Restaurants in {restList.Area}</h1>
     {restList.Restaurants.map((rest, i) => {
       return <Link style={{ color: '#2C3531', textDecoration: 'none' }}
@@ -42,10 +47,10 @@ const Restlist = (props) => {
         }}
       >
         <div className="card">
+          <h1 className="cardTitle">{rest.Name}</h1>
           <img src={rest.LogoUrl} alt="logo" />
           <div className="container">
-
-            <h1 className="cardTitle">{rest.Name}</h1>
+            <img className="logo" src={rest.LogoUrl} alt="logo" />
             <ul>
               {rest.Cuisines.map((cuisine, i) => {
                 return <li key={i}>

@@ -1,19 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-// function OrderDetails({ rest }) {
-
-
-//   if (rest.IsOpenNow === false) {
-//     return <div>
-//       <h4>This Location is currently closed.</h4>
-//       <p>Opening time: <span>{rest.OpeningTimeLocal}</span></p>
-//     </div>
-//   } else {
-//     if (rest.IsOpenNowForDelivery === true && rest.isOpenNowForCollection) {
-//       return
-//     }
-//   }
-// }
 
 const RestOrders = ({ rest }) => {
 
@@ -50,7 +36,7 @@ const RestOrders = ({ rest }) => {
     }
   }
 
-  return <section>
+  return <section className="restDetails">
     <h3>Order Details:</h3>
     <div>
       <ul>
