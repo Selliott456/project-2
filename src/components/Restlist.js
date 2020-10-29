@@ -27,13 +27,20 @@ const Restlist = (props) => {
     {restList.Restaurants.map((rest, i) => {
 
 
-      return <Link key={i} to={`./rest/${rest.Id}`}>
+      return <Link
+        key={i}
+        to={{
+          pathname: `/project-2/restlist/rest/${rest.Id}`,
+          state: { rest }
+        }}
+      >
+        
         <div className="card">
           <h1>{rest.Name}</h1>
           <h2>RANDOM IMAGE</h2>
+          <img src={rest.LogoUrl} alt="logo"/>
           <div className="container">
             <ul>
-              {console.log(rest.Cuisines)}
               {rest.Cuisines.map((cuisine, i) => {
                 return <li key={i}>
                   {cuisine.Name}

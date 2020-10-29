@@ -9,10 +9,10 @@ const Main = () => {
   return <section>
     <nav>
       <div className="navLink">
-        < Link to={'./components/restlist'} style={{ textDecoration: 'none', color: "#D9B08C" }}> All Restaurants </Link >
+        < Link to={'/project-2/restlist'} style={{ textDecoration: 'none', color: '#D9B08C' }}> All Restaurants </Link >
       </div>
       <div className="navLink">
-        <Link to={'./components/main'} style={{ textDecoration: 'none', color: "#D9B08C" }}>Home</Link>
+        <Link to={'/project-2/main'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Home</Link>
       </div>
     </nav>
     <div className="top-section">
@@ -21,7 +21,7 @@ const Main = () => {
       </div>
       <div className="hero-input">
         <input className="mainInput" placeholder="Enter postcode" onChange={(event) => updateUserInput(event.target.value)} />
-        <button id="homeSearch">< Link to={`./restlist/${userInput}`} value={userInput} style={{ textDecoration: 'none', color: "#D1E8E2" }}> Search By Postcode </Link ></button>
+        <button id="homeSearch">< Link to={`/project-2/restlist/${userInput}`} value={userInput} style={{ textDecoration: 'none', color: '#D1E8E2' }}> Search By Postcode </Link ></button>
       </div>
     </div>
 
