@@ -8,6 +8,7 @@ const Header = () => {
     < Link to={'./components/restlist'}> List All Restaurants </Link >
     <Link to={'./components/main'}>Home</Link>
   </nav>
+  
 }
 
 

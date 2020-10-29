@@ -25,17 +25,26 @@ const Restlist = (props) => {
   return <section>
     <h1>Restaurants in {restList.Area}</h1>
     {restList.Restaurants.map((rest, i) => {
+
+
       return <Link key={i} to={`./rest/${rest.Id}`}>
-        <h2>{rest.Name}</h2>
-        <ul>
-          {rest.Cuisines.map((cuisine, i) => {
-            return <li key={i}>
-              {cuisine.Name}
-            </li>
-          })}
-        </ul>
-        
+        <div className="card">
+          <h1>{rest.Name}</h1>
+          <h2>RANDOM IMAGE</h2>
+          <div className="container">
+            <ul>
+              {console.log(rest.Cuisines)}
+              {rest.Cuisines.map((cuisine, i) => {
+                return <li key={i}>
+                  {cuisine.Name}
+                </li>
+              })}
+            </ul>
+          </div>
+        </div>
+
       </Link>
+
     })}
   </section>
 
