@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import pizza from '../styles/pizza.jpg'
 
 const Main = () => {
   const [userInput, updateUserInput] = useState('')
@@ -31,7 +32,10 @@ const Main = () => {
 
 
   return <section>
-    <div className="top-section">
+    <div 
+      className="top-section"
+      style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${pizza} )` }}
+    >
       <div className="hero-text">
         <h1 className="mainHeadline"> You want a pizza me?</h1>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-// import Main from "./Main"
+import pizza from '../styles/pizza.jpg'
 
 const Restlist = (props) => {
 
@@ -27,7 +27,10 @@ const Restlist = (props) => {
 
   return <section id="desktopRestList">
     <div id="wholePageContent">
-      <aside className="desktopView">
+      <aside 
+        className="desktopView"
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${pizza} )` }}
+      >
       </aside>
       <div id="wholePageList">
         <h1 className="pageTitle">Restaurants in {restList.Area}</h1>
@@ -56,7 +59,10 @@ const Restlist = (props) => {
         })}
         
       </div>
-      <aside className="desktopView">
+      <aside 
+        className="desktopView"
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${pizza} )` }}
+      >
       </aside>
     </div>
   </section>
