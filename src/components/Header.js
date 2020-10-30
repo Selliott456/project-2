@@ -3,9 +3,18 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
 
-  return <nav>
-    <div className="navLink">
-      <Link to={'/project-2/main'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Home</Link>
+  return <nav id="header">
+    <div className="logoContainer">
+      <img id="logo" src="../styles/logo.png" alt="Logo"/>
+    </div>
+
+    <div className="navBar">
+      <div className="navLink">
+        <Link to={'/project-2/'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Home</Link>
+      </div>
+      <div className="navLink">
+        <Link to={'/project-2/authors'} style={{ textDecoration: 'none', color: '#D9B08C' }}>Authors</Link>
+      </div>
     </div>
   </nav>
 

@@ -2,6 +2,45 @@
   box-sizing: border-box;
 }
 
+#authorsImage{
+  width:50%;
+  }
+  #laurence-sherryll{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    margin:20px;
+    align-items: center;
+    background-color: #FFCB9A;
+  }
+  .laurence{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #D1E8E2;
+   
+  }
+#laurence-para{
+  display: block;
+  padding: 15px 0;
+  margin:10px;
+}
+
+  .sherryll{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #D1E8E2;
+   padding:10px;
+   margin:10px;
+  }
+
 @media only screen and (min-width: 601px) {
   * {
     box-sizing: border-box;
@@ -27,16 +66,7 @@
   flex:0.5;
   
   }
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    background-color: #2C3531;
-    padding: 20px;
-  }
-  .navLink {
-    padding: 0 10px;
-  }
+
   .top-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/styles/pizza.jpg');
     height: 100vh;
@@ -109,12 +139,11 @@
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin: 40px;
   }
 
   #orderDetails{
     background-color:rgb(255, 202, 153, 0.4);
-   
+    
   }
   #orderTitle{
     margin-left: 30px;
@@ -159,10 +188,7 @@
     border-style: solid;
     border-radius: 4px;
   }
-  ul {
-    /* list-style-image: url('/src/styles/food-serving.png'); */
-    /* background-size: 2px; */
-  }
+
   .logo {
     margin-bottom: 20px;
     height: 80px;
@@ -171,6 +197,7 @@
     display: flex;
     flex-direction: column;
     padding: 30px;
+    min-width: 420px;
   }
   #logo-rating {
     color: #2C3531;
@@ -206,6 +233,7 @@
     flex-direction: column;
 
   }
+
   .loaderContainer {
     display: flex;
     flex-direction: column;
@@ -229,6 +257,68 @@
   }
 }
 
+.mapSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+}
+
+#mapCard {
+  height:400px;
+  width:400px;
+}
+
+#mapContainer {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#mapCard p {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+#mapLink {
+  text-decoration: none;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2C3531;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  margin:10px;
+}
+
+.logoContainer {
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+#logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin-left: 10px;
+
+}
+
+.navLink {
+  padding: 0 10px;
+}
 
 @media only screen and (max-width: 600px) {
   * {
@@ -238,16 +328,7 @@
     height: 100%;
     font-family: 'Josefin Sans', sans-serif;
   }
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    background-color: #2C3531;
-    padding: 20px;
-  }
-  .navLink {
-    padding: 0 10px;
-  }
+
   .top-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/styles/pizza.jpg');
     height: 100vh;
@@ -320,7 +401,6 @@
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin: 40px;
   }
 
   #orderDetails{

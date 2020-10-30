@@ -17,12 +17,10 @@ const RestDetails = ({ rest }) => {
     updateStarRating(rest.RatingStars)
   }
 
-  console.log(mapLocation)
-
   return <section className="restInfo">
     <h1 className="cardTitle">{rest.Name}</h1>
     <div id="logo-rating">
-      <img src={rest.LogoUrl} alt="logo"/>
+      <img src={rest.LogoUrl} alt="logo" />
       <div id="fry-rating">
         <h3>Fry Rating:</h3>
         <StarRatingComponent
@@ -35,7 +33,7 @@ const RestDetails = ({ rest }) => {
     </div>
 
     <div id="cuisine-address">
-      <div id="address"> 
+      <div id="address">
         <h3>Address</h3>
         <h4>{mapString}</h4>
       </div>
@@ -51,12 +49,17 @@ const RestDetails = ({ rest }) => {
         </p>
       </div>
     </div>
-    
-    <a href={mapHref} target="_blank" rel="noreferrer" alt={mapAlt}>
-      <div height="400px" width="400px" style={{ backgroundImage: 'url(' + mapSrc + ')' }}>
-        <p>🍔</p>
+
+    <section className="mapSection">
+      <div id="mapCard" style={{ backgroundImage: 'url(' + mapSrc + ')' }}>
+        <a id="mapLink" href={mapHref} target="_blank" rel="noreferrer" alt={mapAlt}>
+          <div id="mapContainer">
+            <p>🍔</p>
+          </div>
+        </a>
       </div>
-    </a>
+    </section>
+
   </section>
 }
 

@@ -19,15 +19,17 @@ const Main = () => {
   }, [userInput])
 
 
-  if (validPostcode.status === 200 && link !== `project-2/restlist/${userInput}`) {
+  if (validPostcode.status === 200 && link === '') {
     updateInvalidPostcode('')
-    updateLink(`project-2/restlist/${userInput}`)
-  } else if (userInput.length > 6 && validPostcode.status !== 200 && updateInvalidPostcode === '') {
+    updateLink(`restlist/${userInput}`)
+  }
+
+  if (userInput.length > 6 && invalidPostcode === '' && validPostcode.status !== 200) {
     updateInvalidPostcode('Please Enter A Valid Postcode.')
     updateLink('')
   }
 
-  console.log(validPostcode)
+
 
   return <section>
     <div className="top-section">
@@ -38,7 +40,7 @@ const Main = () => {
         <small>{invalidPostcode}</small>
         <input className="mainInput" placeholder="Enter postcode" onChange={(event) => updateUserInput(event.target.value)} />
         <button id="homeSearch" >
-          < Link style={{ textDecoration: 'none', color: '#D1E8E2' }} to={link} value={userInput} >
+          < Link style={{ textDecoration: 'none', color: '#D1E8E2' }} to={`/project-2/${link}`} value={userInput} >
             Search By Postcode
           </Link >
         </button>
