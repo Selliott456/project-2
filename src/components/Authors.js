@@ -1,5 +1,5 @@
 import React from 'react'
-
+import authorsImage from '../styles/authorsImage.png'
 
 const Authors = () => {
 
@@ -7,7 +7,7 @@ const Authors = () => {
 
   return <section className="card">
     <h1 id="authoursTitle"> We made this!</h1>
-    <img id="authorsImage" src="/styles/authorsImage.png" alt="laurence-sherryll"></img>
+    <img id="authorsImage" src={authorsImage} alt="laurence-sherryll"></img>
     <h3>A bit about the authors...</h3>
     <div id="laurence-sherryll">
       <div className="laurence">
