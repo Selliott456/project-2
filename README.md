@@ -94,7 +94,7 @@ Response examples:
 }
 ```
 ```json
-{{
+{
     "status": 404,  //INVALID
     "error": "Invalid postcode"
 }
