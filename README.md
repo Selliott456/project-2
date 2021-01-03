@@ -229,4 +229,5 @@ Thats all from me! Please check it out and have some Pizza. Thanks for visiting.
 - Fixed border images that were not loading
 
 Link ---> [🍕](https://prodigresser.github.io/project-2/) 
+
 ![just_eat](READMEdocuments/project-2-screenshot.png)
