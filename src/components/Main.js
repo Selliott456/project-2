@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import axios from 'axios'
 import pizza from '../styles/pizza.jpg'
 
-const Main = () => {
+const Main = (props) => {
+  
   const [userInput, updateUserInput] = useState('')
-  const [validPostcode, updateValidPostcode] = useState({})
-  const [link, updateLink] = useState('')
   const [invalidPostcode, updateInvalidPostcode] = useState('')
 
-  useEffect(() => {
-
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (userInput.length < 6) {
+      return updateInvalidPostcode('Please Enter A Valid Postcode.')
+    }
     async function fetchData() {
-      const { data } = await axios.get(`https://cors-anywhere.herokuapp.com/api.postcodes.io/postcodes/${userInput}`)
-      updateValidPostcode(data)
+      const resp = await axios.get(`https://cors-anywhere.herokuapp.com/api.postcodes.io/postcodes/${userInput}`)
+        .then(() => {
+          props.history.push(`restlist/${userInput}`)
+        })
+        .catch(function () {
+          updateInvalidPostcode('Please Enter A Valid Postcode.')
+        })
     }
     fetchData()
-  }, [userInput])
-
-
-  if (validPostcode.status === 200 && link === '') {
-    updateInvalidPostcode('')
-    updateLink(`restlist/${userInput}`)
   }
 
-  if (userInput.length > 6 && invalidPostcode === '' && validPostcode.status !== 200) {
-    updateInvalidPostcode('Please Enter A Valid Postcode.')
-    updateLink('')
+  function updateInput(e) {
+    e.preventDefault()
+    updateUserInput(e.target.value)
+    updateInvalidPostcode('')
   }
 
 
 
   return <section>
-    <div 
+    <div
       className="top-section"
       style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${pizza} )` }}
     >
@@ -41,11 +42,9 @@ const Main = () => {
       </div>
       <div className="hero-input">
         <small>{invalidPostcode}</small>
-        <input className="mainInput" placeholder="Enter postcode" onChange={(event) => updateUserInput(event.target.value)} />
-        <button id="homeSearch" >
-          < Link style={{ textDecoration: 'none', color: '#D1E8E2' }} to={`/project-2/${link}`} value={userInput} >
-            Search By Postcode
-          </Link >
+        <input className="mainInput" placeholder="Enter postcode" onChange={updateInput} />
+        <button style={{ textDecoration: 'none', color: '#D1E8E2' }} value={userInput} id="homeSearch" onClick={handleSubmit} >
+          Search By Postcode
         </button>
       </div>
     </div>
