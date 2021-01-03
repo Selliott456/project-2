@@ -29,7 +29,7 @@ const Restlist = (props) => {
     <div id="wholePageContent">
       <aside 
         className="desktopView"
-        style={{ backgroundImage: `url( ${pizza} ), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${pizza} )` }}
       >
       </aside>
       <div id="wholePageList">
