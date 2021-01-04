@@ -223,4 +223,11 @@ Additional functionality i would like to add includes filtering the restaurant l
 
 Thats all from me! Please check it out and have some Pizza. Thanks for visiting.
 
+### Fixes
+- Postcode checker on Main page was too greedy - checking after each key press (and breaking after too many requests). Now checks after button submit and redirects if it is a good Postcode.
+- Fixed border and margin issues
+- Fixed border images that were not loading
+
 Link ---> [🍕](https://prodigresser.github.io/project-2/) 
+
+![just_eat](READMEdocuments/project-2-screenshot.png)
