@@ -24,7 +24,6 @@ const Restlist = (props) => {
     </div>
   }
 
-
   return <section id="desktopRestList">
     <div id="wholePageContent">
       <aside 
