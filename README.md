@@ -80,7 +80,7 @@ Quite a simple wireframe was developed, but it had the core concepts in place in
 - Using the Postcode as a prop for the JustEat API Endpoint on page 2.
 - And finally to use the state data 'Address' for the Google Maps Static API.
 
-Here is an example of a the Postcode Endpoint:
+Here is an example of a the [Postcode.io](https://postcodes.io/) Endpoint:
 
 ```http
 api.postcodes.io/postcodes/:postcode
@@ -130,7 +130,7 @@ This is an example of the BrowserRouter in the App.js component -
 
 With the endpoints identified and the structure of the site laid out, the next step was to access the endpoints with the inputs that we gave it. Webhooks help us access that information on request - once it is saved in state we can then manipulate the information it gives us. The key part of the site - the List of Restaurants - is where the JustEat API is accessed. Once a location is selected - an object containing the location data is provided as a prop to the next page. 
 
-Here is an example of the webhook used to capture the JestEat API using the 'axios' extension, performed once with the ``` useEffect((), [])``` function-
+Here is an example of the webhook used to capture the [JestEat API](https://uk.api.just-eat.io/docs) using the 'axios' extension, performed once with the ``` useEffect((), [])``` function-
 
 ```javascript
   useEffect(() => {
@@ -202,7 +202,7 @@ Here is an example of a location card -
 
 ![Restaurant Card](READMEdocuments/restcard.png) 
 
-Here is an example of a Static Google Map for a location - 
+Here is an example of a [Static Google Maps API](https://cloud.google.com/maps-platform/) for a location - 
 
 ![Map](READMEdocuments/map.png)
 
