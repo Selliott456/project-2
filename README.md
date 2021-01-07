@@ -3,6 +3,7 @@
 ### General Assembly Software Engineering Immersive
 
 # Project 2 - 48 Hour Reacathon -  JustEat App
+### By [Laurence 🌮](https://github.com/ProDigresser) and Co-Contributor [Sherryll 🌭](https://github.com/Selliott456)
 
 			                            ████████                            
 			                        ████    ░░  ██                          
@@ -43,7 +44,7 @@ The task was to fully develop an App in react, whilst working with API and publi
 
 Our decided application is based off of the JustEat API, using ReactJS and various tools such and a Package Manager, Transpiler and Module Bundler.
 
-Find it Here! --> [🍕](https://prodigresser.github.io/project-2/)
+Find it Here! --> [Just Eat App 🍕](https://prodigresser.github.io/project-2/)
 
 ### The Brief
 
