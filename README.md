@@ -221,7 +221,7 @@ This project an interesting challenge - working in a pair, with a relatively new
 
 Additional functionality i would like to add includes filtering the restaurant list page for types of cuisine, rating and distance, and perhaps display the content initially in a particular order. I would also like to refactor the Postcode Validator to work more dynamically with the page. Finally perhaps i would like to re-organize the restaurant page to be a little more coherent.
 
-Thats all from me! Please check it out and have some Pizza. Thanks for visiting.
+That's all from me! Please check it out and have some Pizza. Thanks for visiting.
 
 ### Fixes
 - Postcode checker on Main page was too greedy - checking after each key press (and breaking after too many requests). Now checks after button submit and redirects if it is a good Postcode.
