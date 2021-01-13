@@ -1,7 +1,6 @@
 ### General Assembly Software Engineering Immersive
 
 # Project 2 - 48 Hour Reacathon -  JustEat App
-### By [Laurence 🌮](https://github.com/ProDigresser) and Co-Contributor [Sherryll 🌭](https://github.com/Selliott45
 
 ## The Overview 
 This project is a Pair Programming task - set as part of the Software Engineering Immersive Course from General Assembly.
@@ -182,19 +181,11 @@ Finally here is the color pallette used for the site design -
 
 ![Color Pallette](READMEdocuments/colorpalette.png)
 
-## In Conclusion
+### Key Learnings
+This was my first time working with someone else so there were a lot of things to learn - for example setting personal preferneces aside regarding functionality in order to meet the set deadline. I also really cemented my understadning of how APIs work and how to manipulate the data that comes out of them. It was also a good opportunity to practice using useState in React, which was a realtively new concept. I think the biggest barrier was that we created this before we were really taught how to use github for collaboration, so HUGE efforst were required to communicate clearly and we were dropping files backwards and forwards over slack. 
 
-This project an interesting challenge - working in a pair, with a relatively new language, built from the ground up. I have made great gains in my understanding of webhooks, useState, and navigating and accessing APIs. I have also learned to not panic and take a deep breath when React gives a stream of errors through the console!
 
-Additional functionality i would like to add includes filtering the restaurant list page for types of cuisine, rating and distance, and perhaps display the content initially in a particular order. I would also like to refactor the Postcode Validator to work more dynamically with the page. Finally perhaps i would like to re-organize the restaurant page to be a little more coherent.
 
-That's all from me! Please check it out and have some Pizza. Thanks for visiting.
-
-### Fixes
-- Postcode checker on Main page was too greedy - checking after each key press (and breaking after too many requests). Now checks after button submit and redirects if it is a good Postcode.
-- Fixed border and margin issues
-- Fixed border images that were not loading
-
-Link ---> [Just Eat App 🍕](https://prodigresser.github.io/project-2/) 
+Link ---> [Just Eat App](https://prodigresser.github.io/project-2/) 
 
 ![just_eat](READMEdocuments/project-2-screenshot.png)
